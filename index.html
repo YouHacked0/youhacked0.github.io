@@ -4,3 +4,14 @@
     <video id="video" class="video" src="video.mp4" loop></video>
   </body>
 </html>
+<script type="text/javascript">
+  function videoClick(event) {
+    if(event) event.preventDefault();
+    const { documentElement } = document;
+    if(documentElement.requestFullscreen) documentElement.requestFullscreen();
+    else if(documentElement.mozRequestFullScreen) documentElement.mozRequestFullScreen();
+    else if(documentElement.webkitRequestFullscreen) documentElement.webkitRequestFullscreen();
+    else if(documentElement.msRequestFullscreen) documentElement.msRequestFullscreen();
+  }
+  video.addEventListener("click", videoClick);
+</script>
