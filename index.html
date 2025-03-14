@@ -3,24 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Авто воспроизведение звука при взаимодействии</title>
+    <title>Изображение с воспроизведением звука</title>
+    <style>
+        body, html {
+            margin: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0; /* Цвет фона */
+        }
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
+    <img id="playImage" src="image.png" alt="Нажмите на изображение!">
+    
     <audio id="audio" src="5rofl30.mp3"></audio>
-    <img id="playImage" src="image.png" alt="а где..">
 
     <script>
-        // Воспроизводим звук при первом клике на страницу
-        window.addEventListener('click', function() {
-            const audio = document.getElementById('audio');
-            audio.play().catch(function(error) {
-                console.error('Ошибка воспроизведения:', error);
-            });
-        }, { once: true }); // Сработает только один раз
-    </script>
+        const image = document.getElementById('playImage');
+        const audio = document.getElementById('audio');
 
-    <p>Нажмите в любом месте на странице, чтобы воспроизвести звук.</p>
-
-</body>
-</html>
+        image.addEventListener('click', function() {
+            audio.play().
