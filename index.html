@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кнопка на весь экран</title>
+    <title>Изображение на весь экран</title>
     <style>
         body, html {
             margin: 0;
@@ -12,25 +12,24 @@
             align-items: center;
             justify-content: center;
         }
-        button {
+        img {
             width: 100%;
-            height: 100%;
-            font-size: 24px;
+            height: auto;
             cursor: pointer;
         }
     </style>
 </head>
 <body>
 
-    <button id="playButton">Нажмите здесь!</button>
+    <img id="playImage" src="image.png" alt="Нажмите здесь!">
     
     <audio id="audio" src="5rofl30.mp3"></audio>
 
     <script>
-        const button = document.getElementById('playButton');
+        const image = document.getElementById('playImage');
         const audio = document.getElementById('audio');
 
-        button.addEventListener('click', function() {
+        image.addEventListener('click', function() {
             audio.play();
         });
     </script>
