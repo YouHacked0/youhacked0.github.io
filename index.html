@@ -1,29 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <body>
-    <button>Кнопка на всю ширину</button>
-    <video id="video" class="video" src="video.mp4" loop></video>
-  </body>
+<body>
+<audio src='music.mp3' autoplay='autoplay' loop='loop'></audio>
+</body>
 </html>
-<script type="text/javascript">
-  const video = document.getElementById("video");
-  
-  function videoClick(event) {
-    if(event) event.preventDefault();
-    const { documentElement } = document;
-    if(documentElement.requestFullscreen) documentElement.requestFullscreen();
-    else if(documentElement.mozRequestFullScreen) documentElement.mozRequestFullScreen();
-    else if(documentElement.webkitRequestFullscreen) documentElement.webkitRequestFullscreen();
-    else if(documentElement.msRequestFullscreen) documentElement.msRequestFullscreen();
-  }
-  
-  video.addEventListener("click", videoClick);
-</script>
-
-<style>
-button {
-  width: 100%;
-  display: block;
-  box-sizing: border-box;
-}
-</style>
