@@ -3,35 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Изображение на весь экран</title>
-    <style>
-        body, html {
-            margin: 0;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        img {
-            width: 100%;
-            height: auto;
-            cursor: pointer;
-        }
-    </style>
+    <title>Автоматическое воспроизведение звука</title>
 </head>
 <body>
 
-    <img id="playImage" src="image.png" alt="Нажмите здесь!">
-    
-    <audio id="audio" src="5rofl30.mp3"></audio>
+    <audio id="audio" src="5rofl30.mp3" autoplay></audio>
 
     <script>
-        const image = document.getElementById('playImage');
-        const audio = document.getElementById('audio');
-
-        image.addEventListener('click', function() {
-            audio.play();
-        });
+        // Воспроизводим звук при загрузке страницы
+        window.onload = function() {
+            const audio = document.getElementById('audio');
+            audio.play().catch(function(error) {
+                console.error('Ошибка воспроизведения:', error);
+            });
+        };
     </script>
 
 </body>
