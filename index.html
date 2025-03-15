@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Изображение с воспроизведением звука</title>
+    <title>Изображение на весь экран</title>
     <style>
         body, html {
             margin: 0;
@@ -11,24 +11,28 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #dddddd; /* Цвет фона */
         }
         img {
-            max-width: 100%;
-            max-height: 100%;
+            width: 100%;
+            height: auto;
             cursor: pointer;
         }
     </style>
 </head>
 <body>
 
-    <img id="playImage" src="image.png" alt="Нажмите на изображение!">
+    <img id="playImage" src="image.png" alt="Нажмите здесь!">
     
-    <audio id="audio" src="rofl.mp3"></audio>
+    <audio id="audio" src="5rofl30.mp3"></audio>
 
     <script>
         const image = document.getElementById('playImage');
         const audio = document.getElementById('audio');
 
         image.addEventListener('click', function() {
-            audio.play().
+            audio.play();
+        });
+    </script>
+
+</body>
+</html>
